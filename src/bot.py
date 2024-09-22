@@ -15,6 +15,6 @@ class Bot:
         options.page_load_strategy = 'eager'
         options.add_argument("user-data-dir=./profile")
         self.driver = webdriver.Chrome(options=options)
-        with open('data/config.json') as f:
+        with open('config/config.json') as f:
             data = json.load(f)
             self.base_url = data.base_url
