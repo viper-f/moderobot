@@ -3,3 +3,4 @@
 config/config.json
 subprocess.errlog
 subprocess.log
+src/__pycache__
