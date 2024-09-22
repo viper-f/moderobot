@@ -1,2 +1,5 @@
 .venv
 .idea
+config/config.json
+subprocess.errlog
+subprocess.log
