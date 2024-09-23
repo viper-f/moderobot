@@ -1,7 +1,7 @@
 ssh username@server_ip  
 -- enter password  
 apt update  
-apt install nano git -y
+apt install nano git -y  
 git clone https://github.com/viper-f/moderobot.git  
 ./moderobot/install.sh  
 cd config  
