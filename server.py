@@ -22,9 +22,13 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             subprocess.Popen([".venv/bin/python", "src/profile_update.py",
                               "-d", request_data,
                               "symbol"], stdout=open('subprocess.log', 'a'), stderr=open('subprocess.errlog', 'a'))
-            self.send_response(200)
+
+            response = bytes("Updating", "utf-8") 
+
+            self.send_response(200) 
+            self.send_header("Content-Length", str(len(response)))
             self.end_headers()
-            self.wfile.write("Updating. Wait a minute")
+            self.wfile.write(response) 
 
         if self.path == '/login':
             request_data = self.getPostData()
