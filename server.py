@@ -25,7 +25,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.send_response(200)
             self.end_headers()
             self.wfile.write(b'Updating. Wait a minute')
-             self.wfile.close()
+            self.wfile.close()
 
         if self.path == '/login':
             request_data = self.getPostData()
