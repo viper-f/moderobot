@@ -13,9 +13,10 @@ data = json.loads(start_options.data)
 
 bot = Bot()
 
+bot.driver.get(bot.base_url + '/profile.php?section=fields&id='+data['id'])
 WebDriverWait(bot.driver, 5).until( EC.presence_of_element_located((By.ID, "profile8")))
 form = bot.driver.find_element(By.ID, "profile8")
-for datum in data:
+for datum in data['update']:
     field = form.find_element(By.ID, datum['field_name'])
     bot.driver.execute_script("arguments[0].value = arguments[1]", field, datum['value'])
     #form.find_element(By.ID, datum['field_name']).send_keys(datum['value'])
