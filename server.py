@@ -47,7 +47,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         return post_data.decode('utf-8')
 
 #httpd = HTTPServer(('', 8000), SimpleHTTPRequestHandler)
-httpd = HTTPServer(('test.bampling.com', 4443), SimpleHTTPRequestHandler)
+httpd = HTTPServer(('test.vampling.com', 4443), SimpleHTTPRequestHandler)
 
 httpd.socket = ssl.wrap_socket (httpd.socket, 
         keyfile="/etc/letsencrypt/live/test.vampling.com/privkey.pem", 
