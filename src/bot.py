@@ -17,4 +17,4 @@ class Bot:
         self.driver = webdriver.Chrome(options=options)
         with open('config/config.json') as f:
             data = json.load(f)
-            self.base_url = data.base_url
+            self.base_url = data['base_url']
