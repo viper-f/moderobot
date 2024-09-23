@@ -23,10 +23,10 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
                               "-d", request_data,
                               "symbol"], stdout=open('subprocess.log', 'a'), stderr=open('subprocess.errlog', 'a'))
 
-            response = bytes("Updating", "utf-8") 
+            response = bytes('{"update": "srarted"}', "utf-8") 
 
             self.send_response(200) 
-            self.send_header('Content-type','text/html')
+            self.send_header('Content-type','application/json')
             self.send_header("Content-Length", str(len(response)))
             self.end_headers()
             self.wfile.write(response) 
