@@ -24,7 +24,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
                               "symbol"], stdout=open('subprocess.log', 'a'), stderr=open('subprocess.errlog', 'a'))
             self.send_response(200)
             self.end_headers()
-            self.wfile.write(b'Updating. Wait a minute')
+            self.wfile.write("Updating. Wait a minute")
             self.wfile.close()
 
         if self.path == '/login':
