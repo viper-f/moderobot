@@ -13,7 +13,7 @@ data = json.loads(start_options.data)
 
 bot = Bot()
 
-bot.driver.get(bot.base_url + '/profile.php?section=fields&id='+data['id'])
+bot.driver.get(bot.base_url + '/profile.php?section=fields&id='+str(data['id']))
 WebDriverWait(bot.driver, 5).until( EC.presence_of_element_located((By.ID, "profile8")))
 form = bot.driver.find_element(By.ID, "profile8")
 for datum in data['update']:
