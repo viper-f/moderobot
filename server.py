@@ -9,7 +9,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         if self.path == '/profile-update':
             request_data = self.getPostData()
             subprocess.Popen([".venv/bin/python", "src/profile_update.py",
-                              "-d", request_data['data'],
+                              "-d", request_data,
                               "symbol"], stdout=open('subprocess.log', 'a'), stderr=open('subprocess.errlog', 'a'))
             self.send_response(200)
             self.end_headers()
