@@ -26,6 +26,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             response = bytes("Updating", "utf-8") 
 
             self.send_response(200) 
+            self.send_header('Content-type','text/html')
             self.send_header("Content-Length", str(len(response)))
             self.end_headers()
             self.wfile.write(response) 
