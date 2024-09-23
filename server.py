@@ -24,7 +24,8 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
                               "symbol"], stdout=open('subprocess.log', 'a'), stderr=open('subprocess.errlog', 'a'))
             self.send_response(200)
             self.end_headers()
-            self.wfile.write(b'Updating. Wait a minute'.encode("utf-8"))
+            self.wfile.write(b'Updating. Wait a minute')
+             self.wfile.close()
 
         if self.path == '/login':
             request_data = self.getPostData()
@@ -33,7 +34,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
                               "symbol"], stdout=open('subprocess.log', 'a'), stderr=open('subprocess.errlog', 'a'))
             self.send_response(200)
             self.end_headers()
-            self.wfile.write(b'Logging in'.encode("utf-8"))
+            self.wfile.write(b'Logging in')
 
     def getPostData(self):
         content_length = int(self.headers['Content-Length'])
